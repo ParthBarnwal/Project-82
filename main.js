@@ -1,56 +1,62 @@
-var mouse_event="empty";
-var last_position_x,last_position_y;
+var number_of_people=[];
 
-color="black";
-Widthofline=1;
-Radius=20
-canvas=document.getElementById("myCanvas");
-ctx=canvas.getContext("2d");
-
-canvas.addEventListener("mousedown",my_mousedown);
-
-function my_mousedown(e)
+function submit()
 {
-    color=document.getElementById("color").value;
-    Widthofline=document.getElementById("widthofline").value;
-    Radius=document.getElementById("radius").value;
-    mouse_event="mousedown";
+    var GuestName=document.getElementById("name1").value;
+    number_of_people.push(GuestName);
+    console.log(number_of_people);
+    document.getElementById("GuestName").innerHTML=number_of_people;
 }
-
-canvas.addEventListener("mouseleave",my_mouseleave);
-function my_mouseleave(e)
+function show()
 {
-    mouse_event="mouseleave";
-    console.log("my_mouseleave");
-}
+    var display_guest_list_array=[];
+    var length_of_the_number_of_people_array=number_of_people.length;
+    console.log(length_of_the_number_of_people_array);
 
-canvas.addEventListener("mouseup",my_mouseup);
-function my_mouseup(e)
-{
-    mouse_event="mouseUP";
-    console.log("my_mouseUP");
-}
-
-canvas.addEventListener("mousemove",my_mousemove);
-function my_mousemove(e)
-{
-    current_position_of_mouse_x=e.clientX-canvas.offsetLeft;
-    current_position_of_mouse_y=e.clientY-canvas.offsetTop;
-
-    if(mouse_event=="mousedown"){
-        console.log("Current position of x and y cordinates=");
-        console.log("x="+ current_position_of_mouse_x +"y="+current_position_of_mouse_y);
-        ctx.beginPath();
-        ctx.strokeStyle=color;
-        ctx.lineWidth=Widthofline;
-        ctx.arc(current_position_of_mouse_x,current_position_of_mouse_y,Radius,0,2*Math.PI);
-        ctx.stroke();
+    for(var k=0; k<length_of_the_number_of_people_array; k++)
+    {
+        display_guest_list_array.push("<h4> "+number_of_people[k] + "</h4>");
+        console.log(display_guest_list_array);
     }
-    last_position_x=current_position_of_mouse_x;
-    last_position_y=current_position_of_mouse_y;
-}
 
-function cleararea()
-{
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var remove_commas=display_guest_list_array.join(" ");
+    console.log(remove_commas);
+    document.getElementById("display_name").innerHTML=remove_commas;
 }
+function sorting()
+ {
+    number_of_people.sort();
+    console.log(number_of_people);
+
+    var display_guest_sorted_list_array=[];
+
+    var length_of_the_number_of_people_array=number_of_people.length;
+    console.log(length_of_the_number_of_people_array);
+
+    for(var k=0; k<length_of_the_number_of_people_array; k++)
+    {
+        display_guest_sorted_list_array.push("<h4> "+number_of_people[k] + "</h4>");
+        console.log(display_guest_sorted_list_array);
+    }
+
+    display_guest_sorted_list_array.sort();
+    console.log(display_guest_sorted_list_array);
+
+    var remove_commas=display_guest_sorted_list_array.join(" ");
+    console.log(remove_commas);
+    document.getElementById("display_name_sorted").innerHTML=remove_commas;
+ }
+ function searching()
+ {
+     var s=document.getElementById("name1").value;
+     var found=0;
+     var j;
+     for(j=0;j<number_of_people.length;j++)
+     {
+         if(s==number_of_people[j]){
+             found=found+1;
+         }
+     }
+     document.getElementById("error").innerHTML="name found"+found+"time/s";
+     console.log("name found"+found+"time/s");
+ }

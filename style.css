@@ -1,33 +1,28 @@
-.body_backgorund {
-    background-image: url("bg1.jpg");
-    background-position: center;
-    background-size: cover;
-  }
-  body{
-    cursor: pointer;
-  }
-  h1
-  {
-      color: red; 
-      font-size: 40px;
-  }
-  #myCanvas
-  {
-      border-width:10px;
-      background-color: white; 
-      border-style:ridge;
-  }
+#submit_button
+{
+	margin-top: 20px; 
+	margin-bottom: 20px; 
+}
+#sort_button
+{
+	margin-top: 20px; 
+	margin-bottom: 20px; 
+}
 
-  button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 42px;
-    font-size: 16px;
-  }
+input
+{
+	margin: 10px;
+}
+#GuestName
+{
+    padding: 10px;
+	border-radius: 10px;
+    width: 50%;
+}
 
-  input
-  {
-    margin-right: 20px;
-  }
-  
+#display_name_without_commas
+{
+    padding: 10px;
+	border-radius: 10px;
+    width: 50%;
+}

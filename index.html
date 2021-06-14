@@ -1,31 +1,47 @@
+<!DOCTYPE html>
 <html>
-<head>  
+<head>
+	<title>C80</title>
 <link rel="stylesheet" type="text/css" href="style.css">
-
-    <script type="text/javascript">
-</script>
+	<script src="main.js"></script>
 
 </head>
-<body class="body_backgorund">
+<body>
+<center>
+<h3 style="margin-top: 20px; margin-bottom: 20px; ">
+	Guest list
+</h3>
 
-<div align="center">
-<h1>Paint</h1>
+<div id="rows">
+<input type="text" placeholder="Name of the Guest" id="name1">
+<button onclick="submit();" id="submit_button">
+	Submit
+</button>
+<hr>
+<div id="GuestName" style="font-weight: bold;">
+</div>
+<hr>
+<button onclick="show();" id="show">
+Show
+</button>
+<div id="display_name">
+</div>
+<hr>
+<button onclick="sorting()" id="sort_button">
+	Sort
+</button>
+<div id="display_name_sorted">
+</div>
+<hr>
+<input type="text" placeholder="Name of the Guest search" id="name_of_the_Guest_search">
+<button onclick="searching()" id="search_button">
+Search
+</button>
+ 
+<div id="error">
+</div>
+</center>
 
-    <canvas id="myCanvas" width="800" height="600"></canvas>
-        <br><br >
-
-        <span>Radius - </span>
-        <input id="radius" type="number">
-
-     <span>Color - </span>
-     <input id="color" type="text">
-
-     <span>Width of the line</span>
-     <input id="widthofline" type="number">
-
-     <button onclick="cleararea();">Clear</button>
-
-    </div>
-<script src="main.js"></script>
+</script>
 </body>
 </html>
